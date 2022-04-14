@@ -26,14 +26,19 @@
     <div class="parent-for d-flex justify-content-center align-items-center">
     <div class="parent d-flex flex-column bg-modal w-25 px-5 py-5 rounded">
         <label for="" class="mb-2 text-black sigin-clr">Username</label>
-        <input class="w-100 mb-2 " type="text">
+        <input class="w-100 " type="text" id="username">
+        <div id="erreurName" class="mb-2"></div>
         <label for="" class="mb-2 text-black sigin-clr">Password</label>
-        <input class="w-100 mb-3" type="password">
-        <button class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit">LOGIN</button>
+        <input class="w-100 " type="password" id="password">
+        <div id="erreurPassword" class="mb-3"></div>
+        <input class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit" value="LOGIN" id="login">
 
 
-        <p class="mt-4 text-black text-center sigin-clr">No account? <span class="h-one "> Sign up</span> here.</p>
+        <p class="mt-4 text-black text-center sigin-clr">No account? <a class="h-one text-decoration-none fw-bold" href="signin.php"> Sign up</a> here.</p>
       </div>
     </div>
+
+    <!-- link js  -->
+    <script src="../../assets/js/LoginFormValid.js"></script>
 </body>
 </html>

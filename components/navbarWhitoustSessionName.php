@@ -3,7 +3,7 @@
             <div class="container">
                     <a class="text-decoration-none text-white fs-2" href="#">CONTACT</a>
                     <div class="nav">
-            <a class ="text-decoration-none text-white special event-model " href="">LOGIN</a> <i class="fas fa-sign-in"></i>
+            <a class ="text-decoration-none text-white special event-model " href="#">LOGIN</a> <i class="fas fa-sign-in"></i>
         </div>
             </div>
     </nav>

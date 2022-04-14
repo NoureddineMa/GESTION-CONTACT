@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Contacts</title>
     <!-- link fontawesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- link css -->
      <link rel="stylesheet" href="../../assets/style.css">
@@ -13,10 +13,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- link icos font awesome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <!-- ------------ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- ------------ -->
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
 <body class="for-body">
+  
 <!-- Start NAVBAR -->
   <?php 
   
@@ -67,13 +71,71 @@
       </table>
 </div>
 
-<div class="card text-center w-25 d-flex position mt-5">
+<div class="card text-center d-flex position mt-5 w-25">
     <div class="card-body bg-opa maher">
       <h5 class="card-title text-black">ADD CONTACT</h5>
       <p class="card-text text-black">U can ADD your New Contacts here.</p>
-      <a href="#" class="btn bg-submit text-white">ADD CONTACT +</a>
-    </div>
-  </div>
+      <button type="button" class="btn bg-clr text-white py-2 px-2  w-50" data-toggle="modal" data-target="#myModal">
+           ADD + 
+      </button>
+      
+</div>
 
+
+
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <!-- Modal Header -->
+               <div class="modal-header">
+                  <h4 class="modal-title ml-3">You CAN ADD A CONTACT</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+               </div>
+               <!-- Modal body -->
+               <div class="modal-body">
+               <div class="form-outline mb-4 ">
+          <label class="form-label text-black" for="">Full name *</label>
+          <input type="text"  class="form-control form-control"placeholder="Entrer votre nom complet" id="Fname" />
+          <div id="erreur-Fname"></div>
+        </div>
+
+             <div class="form-outline mb-4">
+               <label class="form-label text-black" for="">Email * </label>
+               <input type="text"  class="form-control form-control"placeholder="Entrer votre Email"id="email" />
+               <div id="erreur-email"></div>
+            </div>
+
+            <div class="form-outline mb-4">
+              <label class="form-label text-black" for="">phone Number *    </label>
+              <input type="text"  class="form-control form-control"placeholder="Entrer votre Number"id="phone" />
+              <div id="erreur-Phone"></div>
+            </div>
+
+            <div class="form-outline mb-4">
+              <label class="form-label text-black" for="">Adresse *</label>
+              <input type="text"  class="form-control form-control"placeholder="Entrer votre Adresse" id="adresse" />
+              <div id="erreur-adresse"></div>
+            </div>
+             </div>
+               <!-- Modal footer -->
+               <div class="modal-footer">
+                    <input type="submit" value="ADD A CONTACT" id="add" />
+                </div>
+                </div>
+                </div>
+                </div>
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <!-- link js  -->
+      <script src="../../assets/js/AddContactFormValid.js"></script>
+
+<!-- modal -->
 
 <!-- end section -->
+
+</body>
+
+
