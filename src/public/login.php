@@ -1,3 +1,28 @@
+<!-- seesion -->
+<?php
+session_start();
+
+include 'DbConnection.php';
+include 'ClassUser.php';
+
+$user = new USER($db_conn);
+
+  include '../../components/navbarWhitoustSessionName.php';
+     if(isset($_POST['login'])){
+      $Name  = $_POST['Name'];
+      $pass  = $_POST['password'];
+      
+      if($user->login($Name,$pass)){
+        header('Location: contact.php');
+      }
+      else{
+        $error = "Please Verify ur Name or Password !!";
+       
+        
+      }
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,22 +42,24 @@
 <body class="for-body">
 <body class="for-body">
    <!-- Start NAVBAR -->
-<?php 
-  
-  include '../../components/navbarWhitoustSessionName.php';
-?>
+
 <!-- End of NAVBAR  -->
     <h1 class="text-black text-center ">LOG IN </h1>
+    <form  method="post" action = "<?=$_SERVER['PHP_SELF'];?>" > 
     <div class="parent-for d-flex justify-content-center align-items-center">
     <div class="parent d-flex flex-column bg-modal w-25 px-5 py-5 rounded">
+ 
+        <!-- Input Username  -->
         <label for="" class="mb-2 text-black sigin-clr">Username</label>
-        <input class="w-100 " type="text" id="username">
+        <input class="w-100 " type="text" id="username" name="Name">
         <div id="erreurName" class="mb-2"></div>
+      <!-- Input Password -->
         <label for="" class="mb-2 text-black sigin-clr">Password</label>
-        <input class="w-100 " type="password" id="password">
+        <input class="w-100 " type="password" id="password" name="password">
         <div id="erreurPassword" class="mb-3"></div>
-        <input class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit" value="LOGIN" id="login">
-
+      <!-- Input type Submit for login  -->
+        <input class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit" value="LOGIN" id="login" name="login">
+    </form>
 
         <p class="mt-4 text-black text-center sigin-clr">No account? <a class="h-one text-decoration-none fw-bold" href="signin.php"> Sign up</a> here.</p>
       </div>
@@ -40,5 +67,7 @@
 
     <!-- link js  -->
     <script src="../../assets/js/LoginFormValid.js"></script>
+    <script src="../../assets/js/signin.js"></script>
+
 </body>
 </html>

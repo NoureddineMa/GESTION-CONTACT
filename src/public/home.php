@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,13 +20,22 @@
 
 <!-- Start NAVBAR -->
 <?php 
+
+  session_start();
+  include 'DbConnection.php';
+  $user_id = $_SESSION['user_session'];
+  $stmt = $db_conn->prepare("SELECT * FROM user WHERE id=:user_id");
+  $stmt->execute(array(":user_id"=>$user_id));
+  $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+  $myDate = date("Y-m-d H:i:s");
+
   
   include '../../components/navbar.php';
 ?>
 <!-- End of NAVBAR  -->
 <!-- start Section  --> 
 <div class="parent container border rounded px-5 py-5 bg-light">
-<h1 class="text-black mb-5">Welcome, Maher</h1>
+<h1 class="text-black mb-5">Welcome,<?= $userRow['Name'];?></h1>
 <h3 class="log-i ">Your Profile : </h3>
 
 <hr>
@@ -34,7 +44,7 @@
     <p class="text-black fw-bolder gx-5">Username:</p>
 </div>
 <div class="child">
-    <p class="text-black">Maher</p>
+    <p class="text-black"><?= $userRow['Name'];?></p>
 </div>
 </div>
 <hr>
@@ -42,8 +52,8 @@
     <div class="child">
     <p class="text-black fw-bolder ">Signup date:</p>
 </div>
-<div class="child">
-    <p class="text-black">Sun, 07 Apr 2019 16:11:25 +0000</p>
+<div class="child"> 
+    <p class="text-black"><?= $userRow['Date'];?></p>
 </div>
 </div>
 <hr>
@@ -52,7 +62,7 @@
     <p class="text-black fw-bolder">Last login:</p>
 </div>
 <div class="child">
-    <p class="text-black">Mon, 08 Apr 2019 14:24:20 +0000</p>
+    <p class="text-black"><?= "$myDate"; ?></p>
 </div>
 </div>
 

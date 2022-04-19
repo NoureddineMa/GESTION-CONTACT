@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
 <div class="container d-flex flex-row justify-content-around mt-5 bg-clr col-xl-column col-lg-column py-5  rounded position-relative">
     <div class="first-child">
         <h1 class="text-white mt-5 ">Hello!</h1>
-        <p class="text-white mt-4"> <a class="h-one" href="./src/public/signin.php">Sign up</a> to start your contacts list.</p>
+        <p class="text-white mt-4"> <a class="h-one" href="./src/public/signin.php">Sign up </a> to start your contacts list.</p>
         <p class="text-white">Already have an account? <a class=" h-one event-model " href="./src/public/login.php"> Login here. </a> </p>
     </div>
     <div class="first-child">

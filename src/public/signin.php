@@ -1,3 +1,25 @@
+<?php   
+
+// Sign Up page not Sign in
+require 'ClassUser.php';
+require 'DbConnection.php';
+$user = new USER($db_conn);
+
+
+if( isset($_POST['signin'])){
+  $Name = $_POST['Name'];
+  $password = $_POST['password'];
+  if($Name === "" || $password ==="") {
+    $error[] = "provide username & password !"; 
+    if(strlen($password) < 6){
+      $error[] = "Password must be atleast 6 characters"; 
+    }
+  };
+ $user->register($Name,$password);
+ header ('Location: login.php ');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +39,6 @@
 </head>
 
 
-
 <body class="for-body">
     <!-- Start NAVBAR -->
 <?php 
@@ -29,26 +50,35 @@
 
 <!-- start form  -->
 <h1 class="text-white text-center ">SIGN UP </h1>
+<form method="post">
 <div class="parent-for d-flex justify-content-center align-items-center">
 <div class="parent d-flex flex-column bg-modal w-25 px-5 py-5 rounded border-none">
+<?php
+            if(isset($error))
+            {
+               foreach($error as $error)
+               {
+                  ?>
+                  <div class="alert alert-danger">
+                      <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?>
+                  </div>
+                  <?php } } ?>
     <label for="" class="mb-2 text-black sigin-clr">Username</label>
-    <input class="w-100 mb-1 " type="text" id="Username">
+    <input class="w-100 mb-1 " type="text" id="Username" name="Name">
     <div id="errUser" class="mb-3"></div>
     <label for="" class="mb-2 text-black sigin-clr">Password</label>
-    <input class="w-100 mb-1" type="password" id="Password">
+    <input class="w-100 mb-1" type="password" id="Password" name="password">
     <div id="errPass" class="mb-3"></div>
     <label for="" class="mb-2 text-black sigin-clr">Password Verify</label>
     <input class="w-100 mb-1" type="password" id="PasswordV">
     <div id="errPassV" class="mb-3"></div>
-    <input class="w-100  bg-submit text-white border-0 rounded py-2 " id="signin" type="submit">
+    <input class="w-100  bg-submit text-white border-0 rounded py-2 " id="signin" type="submit" name="signin" value="Sign in">
 
     <p class="mt-4 text-black text-center sigin-clr">Already have an account?<a class="h-one text-decoration-none fw-bold" href="login.php" > Login</a> here.</p> 
   </div>
 </div>
-
+</form>
 <!-- end form -->
-
-
 <!-- link js  -->
     <script src="../../assets/js/SignupFormValid.js"></script>
 
