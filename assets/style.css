@@ -1,5 +1,5 @@
-.bg-clr{
-    background-color: #006778 !important;
+.bg-new{
+    background-color: #FF8C32 !important;
 }
 .for-body {
     color : #0093AB;
@@ -8,9 +8,7 @@
 .img-s {
     width: 40vw;
 }
-.bg-clr {
-    background-color : #00AFC1;
-}
+
 .h-one {
     color: #FFD124;
 }
@@ -22,13 +20,10 @@
     height:20px;
 }
 .bg-submit {
-    background-color:#3D4395 !important;
-    color:white;
+    background-color:#FF8C32 !important;
+    color:black;
 }
-.bg-modal{
-    background-color:white !important;
-    box-shadow: 0px 0px 14px 3px rgba(0, 147, 171, 0.67);
-}
+
 .log-i {
     color : #00AFC1 !important;
 }
@@ -42,14 +37,7 @@
     background-color: #8FBDD3 !important;
     opacity:0.8;
 }
-.under-line{
-    border-top:0;
-    border-left:0;
-    border-left:0;
-    border-bottom:#00AFC1 solid 1px;
-    width:14%;
 
-}
 .position {
     margin-left: auto !important;
     margin-right:auto !important;
@@ -58,8 +46,32 @@
 .maher {
      box-shadow: 0px 0px 14px 3px rgba(0, 147, 171, 0.67);
 }
-.for-body{
-    background-color:#A1E3D8;
-    background-size:cover;
-    
+.for-font{
+    font-size:70px;
+}
+.clr-lien{
+    color:#FF8C32;
+}
+.orange{
+    color:#FF8C32 !important;
+}
+.unborder{
+    border:none !important;
+    border-bottom:2px solid #FF8C32 !important ;
+}
+.table-bg {
+    background-color : #EEEEEE !important;
+}
+.bg-delete {
+    background-color : #FF8C32 !important ;
+}
+.bg-update {
+    background-color : #4E944F !important;
+}
+input::placeholder {
+    font-size:11px;
+  }
+.for-input>input::value{
+    font-size:11px;
+    color:orange;
 }

@@ -38,29 +38,26 @@ $user = new USER($db_conn);
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
-<body class="for-body">
-<body class="for-body">
+<body class="bg-dark">
    <!-- Start NAVBAR -->
 
 <!-- End of NAVBAR  -->
-    <h1 class="text-black text-center ">LOG IN </h1>
-    <form  method="post" action = "<?=$_SERVER['PHP_SELF'];?>" > 
-    <div class="parent-for d-flex justify-content-center align-items-center">
-    <div class="parent d-flex flex-column bg-modal w-25 px-5 py-5 rounded">
- 
+    <form class="" method="post" action = "<?=$_SERVER['PHP_SELF'];?>" > 
+    <div class="parent-for d-flex justify-content-center align-items-center ">
+    <div class="parent d-flex flex-column bg-modal w-25 px-5 py-5 rounded bg-white">
+    <h1 class="text-black text-center mb-3 ">LOG IN </h1>
+
         <!-- Input Username  -->
-        <label for="" class="mb-2 text-black sigin-clr">Username</label>
-        <input class="w-100 " type="text" id="username" name="Name">
+        <input class="w-100 unborder mt-2 mb-2" type="text" id="username" name="Name" placeholder=" Username">
         <div id="erreurName" class="mb-2"></div>
       <!-- Input Password -->
-        <label for="" class="mb-2 text-black sigin-clr">Password</label>
-        <input class="w-100 " type="password" id="password" name="password">
+        <input class="w-100 unborder " placeholder="Password" type="password" id="password" name="password">
         <div id="erreurPassword" class="mb-3"></div>
       <!-- Input type Submit for login  -->
         <input class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit" value="LOGIN" id="login" name="login">
     </form>
 
-        <p class="mt-4 text-black text-center sigin-clr">No account? <a class="h-one text-decoration-none fw-bold" href="signin.php"> Sign up</a> here.</p>
+        <p class="mt-4 text-black text-center fs-6 sigin-clr">No account? <a class="h-one text-decoration-none fw-bold" href="signin.php"> Sign up</a> here.</p>
       </div>
     </div>
 

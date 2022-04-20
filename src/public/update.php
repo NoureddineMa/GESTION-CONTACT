@@ -31,71 +31,61 @@ $user_id = $_SESSION['user_session'];
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Assets/css/my-bootstrap.css">
-  <link rel="stylesheet" href="../Assets/css/style.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-  <title>Updtae</title>
+  <title>Update</title>
+  <!-- link fontawesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- link css -->
+  <link rel="stylesheet" href="../../assets/style.css">
+  <!-- link bootstrap  -->
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- link icos font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- ------------ -->
+  
+  <!-- ------------ -->
+  <!-- JavaScript Bundle with Popper -->
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="../Assets/images/images-removebg-preview.png" alt="logo" width="70px" height="70px" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse " id="navbarNav">
-        <ul class="navbar-nav ms-auto fs-5 d-flex flex-sm-row justify-content-end">
-          
-          <li class="nav-item">
-            <?php $userRow = $crud->getUserId($user_id); ?>
-          <?php if( is_array($userRow) ||is_object($userRow)){ ?>
-           
-            <a class="nav-link active" aria-current="page" href="home.php"><?= $userRow['Name']; ?></a>
-            <?php } ?>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contacts</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="logout.php">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<body class="bg-dark">
+    
+<?php include '../../components/navbar.php' ?>
+
+<h2 class="text-center text-white">Update Contact</h2>
+
+
   <div class="container mt-3">
-    <form method="POST">
-      <h2>Update Contacte</h2>
+    <form method="POST" class="rounded bg-white px-3 py-3 text-center w-50 position">
       <?php $userRow = $crud->getID($user_id); ?>
           
             
-      <div class="form-group">
-        <label for="nom">Votre nom</label>
-        <input type="text" class="form-control" name="Name" value="<?php  if(isset($Name)) echo $Name; ?> ">
+      <div class="form-group for-input">
+        <input type="text" class="  unborder mb-2 form-control" name="Name" value="<?php  if(isset($Name)) echo $Name; ?> ">
       </div>
 
       <div class="form-group">
-        <label for="email"> Votre mail</label>
-        <input type="email" class="form-control" name="Email" value="<?php if (isset($Email)) echo $Email; ?>">
+        <input type="email" class="form-control unborder mb-2" name="Email" value="<?php if (isset($Email)) echo $Email; ?>">
       </div>
       <div class="form-group">
-        <label for="num">Votre phone </label>
-        <input type="text" class="form-control" name="Phone" value="<?php if (isset($Phone)) echo $Phone; ?>">
+        <input type="text" class="form-control unborder mb-2" name="Phone" value="<?php if (isset($Phone)) echo $Phone; ?>">
       </div>
       <div class="form-group">
-        <label for="number"> Votre adresse </label>
-        <input type="text" class="form-control" name="Adresse" value="<?php if (isset($Adresse)) echo $Adresse; ?>">
+        <input type="text" class="form-control unborder mb-4" name="Adresse" value="<?php if (isset($Adresse)) echo $Adresse; ?>">
       </div>
-      <input type="hidden" name="id_contact" value="<?= isset($id_conatct) ?  $id_conatct : "" ?>">
+      <input type="hidden" name="id_contact " value="<?= isset($id_conatct) ?  $id_conatct : "" ?>">
        
-      <input type="submit" name="btn-update" class="btn btn-primary " value="Update">
+      <input type="submit" name="btn-update" class="btn bg-delete px-3 py-1  " value="Update">
        
     </form>
                                 

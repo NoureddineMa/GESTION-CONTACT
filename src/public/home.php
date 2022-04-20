@@ -1,5 +1,7 @@
 <?php 
 
+date_default_timezone_set('africa/casablanca');
+
   session_start();
   require_once 'includesDb.php';
   $user_id = $_SESSION['user_session'];
@@ -28,15 +30,14 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </head>
-<body>
-<body class="for-body">
+<body class="bg-dark">
 
 <!-- Start NAVBAR -->
 <!-- End of NAVBAR  -->
 <!-- start Section  --> 
 <div class="parent container border rounded px-5 py-5 bg-light">
-<h1 class="text-black mb-5">Welcome,<?= $userRow['Name'];?></h1>
-<h3 class="log-i ">Your Profile : </h3>
+<h1 class="text-black mb-3 text-center ">Welcome, <?=  $userRow['Name'];?></h1>
+<h3 class=" text-center  orange ">Your Profile</h3>
 
 <hr>
 <div class="first-info d-flex flex-row justify-content-between">
@@ -44,7 +45,7 @@
     <p class="text-black fw-bolder gx-5">Username:</p>
 </div>
 <div class="child">
-    <p class="text-black"><?= $userRow['Name'];?></p>
+    <p class="orange fw-bolder"><?= $userRow['Name'];?></p>
 </div>
 </div>
 <hr>
@@ -53,16 +54,16 @@
     <p class="text-black fw-bolder ">Signup date:</p>
 </div>
 <div class="child"> 
-    <p class="text-black"><?= $userRow['Date'];?></p>
+    <p class="orange  fw-bolder"><?= $userRow['Date'];?></p>
 </div>
 </div>
 <hr>
 <div class="first-info d-flex flex-row justify-content-between">
     <div class="child">
-    <p class="text-black fw-bolder">Last login:</p>
+    <p class="text-black orange fw-bolder">Last login:</p>
 </div>
 <div class="child">
-    <p class="text-black"><?= "$myDate"; ?></p>
+    <p class="orange fw-bold "><?= "$myDate"; ?></p>
 </div>
 </div>
 

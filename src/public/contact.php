@@ -35,7 +35,7 @@ $user =  $crud->Show($user_id);
   <!-- JavaScript Bundle with Popper -->
 </head>
 
-<body class="for-body">
+<body class="bg-dark">
 
   <!-- Start NAVBAR -->
  
@@ -43,20 +43,23 @@ $user =  $crud->Show($user_id);
   <!-- End of NAVBAR  -->
 
   <!-- start section -->
-  <div class="container">
-    <h2 class="text-black mb-5">Contact.</h2>
-  </div>
-  <div class="parent container">
-    <h3 class="mb-5 under-line h5">Contact List : </h3>
+ 
+  <div class="parent container d-flex flex-column align-items-center">
+    <h2 class="mb-5 text-white ">Contact List </h2>
+    <p class="text-white">You can add New Contact ! </p>
+    <div class=" text-center w-25 mb-5 "> <button type="button" class="btn-xs bg-delete py-2 px-3  rounded position text-white" data-bs-toggle="modal" data-bs-target="#myModal">
+ ADD CONTACT <i class="fa-solid fa-circle-plus"></i>
+</button> 
+     </div>
 
-    <table class="table bg-opa rounded">
+    <table class="table table-bg rounded  ">
       <thead>
         <tr>
           <th scope="col" class="py-3">Name</th>
           <th scope="col" class="py-3">Email</th>
           <th scope="col" class="py-3">Phone</th>
-          <th scope="col-1" class="py-3">Adresse</th>
-          <th></th>
+          <th scope="col-2" class="py-3">Adresse</th>
+          <th scope="col" class="py-3">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -70,8 +73,8 @@ $user =  $crud->Show($user_id);
             <td><?= $val['Email'] ?></td>
             <td><?= $val['Phone'] ?></td>
             <td><?= $val['Adresse'] ?></td>
-            <td> <a href="update.php?id_contact=<?= $val['id_contact']; ?>"><input type="submit" class="btn btn-success showmodal" value="Update"></a>
-              <a href="delete.php?id_contact=<?= $val['id_contact']; ?>"><input type="button" class="btn btn-danger" value="Delete"></a>
+            <td> <a href="update.php?id_contact=<?= $val['id_contact']; ?>"><input type="submit" class="btn  showmodal bg-warning" value="Update"></a>
+              <a href="delete.php?id_contact=<?= $val['id_contact']; ?>"><input type="button" class="btn btn-danger bg-danger text-black" value="Delete"></a>
             </td>
           <?php endforeach; }?>
       </tbody>
@@ -79,17 +82,14 @@ $user =  $crud->Show($user_id);
     <?php 
       if(empty($user)) {
         echo "
-            <div class='alert alert-danger' role='alert'>
+             <div class='alert alert-danger w-50 text-center' role='alert'>
               There are no contacts yet!
             </div>
         ";
       }  
     ?>
     <?php include './modalAdd.php'; ?>
-    <div class="card text-center w-25 position ">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
- ADD CONTACT 
-</button>  </div>
+    
 
 </div>
    
