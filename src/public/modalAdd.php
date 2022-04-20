@@ -1,4 +1,4 @@
-<?php require 'ClassContact.php';
+<?php require_once 'includesDb.php';
 
 if (isset($_POST['insert'])) {
     $Name = $_POST['Name'];

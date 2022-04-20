@@ -1,5 +1,5 @@
 <?php
-require('DbConnection.php');
+require_once 'includesDb.php';
 $user_id = $_SESSION['user_session'];
 $stmt = $db_conn->prepare("SELECT * FROM user WHERE id=:user_id");
 $stmt->execute(array(":user_id" => $user_id));

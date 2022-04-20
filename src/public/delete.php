@@ -1,7 +1,6 @@
 <?php
 session_start();
-include_once 'DbConnection.php';
-include_once 'ClassContact.php';
+require_once 'includesDb.php';
 $user_id = $_SESSION['user_session'];
 
   if(isset($_GET['id_contact'])) {

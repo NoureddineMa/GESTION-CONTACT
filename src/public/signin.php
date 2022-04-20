@@ -1,8 +1,7 @@
 <?php   
 
 // Sign Up page not Sign in
-require 'ClassUser.php';
-require 'DbConnection.php';
+require_once 'includesDb.php';
 $user = new USER($db_conn);
 
 

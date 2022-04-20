@@ -2,8 +2,7 @@
 <?php
 session_start();
 
-include 'DbConnection.php';
-include 'ClassUser.php';
+require_once 'includesDb.php';
 
 $user = new USER($db_conn);
 

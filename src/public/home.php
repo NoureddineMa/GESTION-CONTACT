@@ -1,3 +1,16 @@
+<?php 
+
+  session_start();
+  require_once 'includesDb.php';
+  $user_id = $_SESSION['user_session'];
+  $stmt = $db_conn->prepare("SELECT * FROM user WHERE id=:user_id");
+  $stmt->execute(array(":user_id"=>$user_id));
+  $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+  $myDate = date("Y-m-d H:i:s");
+
+  
+  include '../../components/navbar.php';
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -19,19 +32,6 @@
 <body class="for-body">
 
 <!-- Start NAVBAR -->
-<?php 
-
-  session_start();
-  include 'DbConnection.php';
-  $user_id = $_SESSION['user_session'];
-  $stmt = $db_conn->prepare("SELECT * FROM user WHERE id=:user_id");
-  $stmt->execute(array(":user_id"=>$user_id));
-  $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
-  $myDate = date("Y-m-d H:i:s");
-
-  
-  include '../../components/navbar.php';
-?>
 <!-- End of NAVBAR  -->
 <!-- start Section  --> 
 <div class="parent container border rounded px-5 py-5 bg-light">

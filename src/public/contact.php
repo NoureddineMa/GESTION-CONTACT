@@ -2,14 +2,11 @@
 session_start();
 include '../../components/navbar.php';
 
-require 'DbConnection.php';
-
+require_once 'includesDb.php';
 
 $user_id = $_SESSION['user_session'];
-$sql = "SELECT * FROM `contact` WHERE id = $user_id";
-$query = $db_conn->prepare($sql);
-$query->execute();
-$user = $query->fetchAll(PDO::FETCH_ASSOC);
+$user =  $crud->Show($user_id);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,9 +86,13 @@ $user = $query->fetchAll(PDO::FETCH_ASSOC);
       }  
     ?>
     <?php include './modalAdd.php'; ?>
+    <div class="card text-center w-25 position ">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-  Open modal
-</button>
+ ADD CONTACT 
+</button>  </div>
+
+</div>
+   
   </div>
 
 

@@ -1,14 +1,25 @@
 <?php
 
- include_once "DbConnection.php";
- $crud = new CONTACT($db_conn);
+include "DbConnection.php";
 // Class Contact -> CRUD :
+
  class CONTACT{
      private $db;
-
      public function __construct($db_conn){
          $this->db=$db_conn;
      }
+     
+
+     public function Show($user_id){
+
+        $sql = "SELECT * FROM `contact` WHERE id = $user_id";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        $user = $query->fetchAll(PDO::FETCH_ASSOC);
+        return $user;
+     }
+
+
 
      public function ADD($Name,$Email,$Phone,$Adresse, $id){
         try{
@@ -27,14 +38,22 @@
             return false;
         }
      }
+     public function getUserId($user_id){
+
+        $stmt = $this->db->prepare("SELECT * FROM user WHERE id =:id_user");
+        $stmt->execute(array(":id_user"=>$user_id));
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user ; 
+    }
+
      public function getID($id_contact)
     {
             $stmt = $this->db->prepare("SELECT * FROM contact WHERE id_contact=:id_contact");
-            $stmt->execute(array(":id_contact"=>$id_contact));
+            $stmt->bindParam(":id_contact", $id_contact);
+            $stmt->execute();
             $editRow=$stmt->fetch(PDO::FETCH_ASSOC);
             return $editRow;
     }
-
     public function update($id_contact,$id,$Name,$Email,$Phone,$Adresse)
  {
   try
@@ -67,3 +86,4 @@
  }
  
 }
+$crud = new CONTACT($db_conn);
