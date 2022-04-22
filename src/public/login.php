@@ -16,8 +16,6 @@ $user = new USER($db_conn);
       }
       else{
         $error = "Please Verify ur Name or Password !!";
-       
-        
       }
     }
     
@@ -48,10 +46,10 @@ $user = new USER($db_conn);
     <h1 class="text-black text-center mb-3 ">LOG IN </h1>
 
         <!-- Input Username  -->
-        <input class="w-100 unborder mt-2 mb-2" type="text" id="username" name="Name" placeholder=" Username">
+        <input class="w-100 unborder mt-2 mb-2 px-2" type="text" id="username" name="Name" placeholder=" Username">
         <div id="erreurName" class="mb-2"></div>
       <!-- Input Password -->
-        <input class="w-100 unborder " placeholder="Password" type="password" id="password" name="password">
+        <input class="w-100 unborder px-2" placeholder="Password" type="password" id="password" name="password">
         <div id="erreurPassword" class="mb-3"></div>
       <!-- Input type Submit for login  -->
         <input class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit" value="LOGIN" id="login" name="login">

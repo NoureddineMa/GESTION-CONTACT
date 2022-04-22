@@ -68,10 +68,4 @@
 .bg-update {
     background-color : #4E944F !important;
 }
-input::placeholder {
-    font-size:11px;
-  }
-.for-input>input::value{
-    font-size:11px;
-    color:orange;
-}
+

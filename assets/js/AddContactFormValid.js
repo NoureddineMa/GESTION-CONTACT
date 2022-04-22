@@ -26,6 +26,24 @@ Submit.addEventListener("click",(e) =>{
         Erreur_Fname.innerText = "";
     }
 })
+// --------------------
+
+// function Name  (Regex): 
+
+function ValidationName(){
+    if(!(/^[a-zA-Z ]{3,10}$/).test(Fname.value)){
+        Fname.setAttribute("style" , "color:red; border: 1px red solid ;")  ;
+        Erreur_Fname.setAttribute("style" , "color:red;");
+        Erreur_Fname.innerText = "veuillez entrer un nom valid";
+        }
+    else{ 
+        Erreur_Fname.setAttribute("style" , "color:black; border: 1px green solid ;");
+        Erreur_Fname.innerText = ""
+
+    }
+}
+
+
 
 // email : 
 Submit.addEventListener("click",(e) =>{
@@ -40,6 +58,26 @@ Submit.addEventListener("click",(e) =>{
         Erreur_email.innerText = "";
     }
 })
+
+
+// function email  : 
+
+function ValidateEmail(){
+    if(!(/^[a-zA-Z_0-9]{3,}@[a-zA-Z]{3,}[.]{1}[a-z]{2,4}$/).test(Email.value)){
+        Email.setAttribute("style" , "color:red; border: 1px red solid ;")  ;
+        Erreur_email.setAttribute("style" , "color:red;");
+        Erreur_email.innerText = "veuillez entrer un email valid";
+        }
+    else{ 
+        Email.setAttribute("style" , "color:black; border: 1px green solid ;");
+        Erreur_email.innerText = "";
+
+    }
+}
+
+
+
+
 // Phone : 
 Submit.addEventListener("click",(e) =>{
     if(Phone.value == ""){
@@ -53,11 +91,26 @@ Submit.addEventListener("click",(e) =>{
         Erreur_phone.innerText = "";
     }
 })
+
+// function Phone : 
+
+function ValidatePhone(){
+    if(!(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/).test(phone.value)){
+        Phone.setAttribute("style" , "color:red; border: 1px red solid ;")  ;
+        Erreur_phone.setAttribute("style" , "color:red;");
+        Erreur_phone.innerText = "veuillez entrer un Numero valid !";
+        }
+    else{ 
+        Phone.setAttribute("style" , "color:black; border: 1px green solid ;");
+        Erreur_phone.innerText = "";
+    }
+}
+
 // Adresse : 
 Submit.addEventListener("click",(e) =>{
     if(Adresse.value == ""){
         e.preventDefault();
-        Adresse.setAttribute("style" , "color:red; border: 1px red solid ;")  ;
+        Adresse.setAttribute("style" , "color:red; border: 1px red solid ;");
         Erreur_adresse.innerText = "Adresse Cant be blank";
         Erreur_adresse.setAttribute("style" , "color:red;font-size: 9px;");
     }
@@ -66,3 +119,7 @@ Submit.addEventListener("click",(e) =>{
         Erreur_adresse.innerText = "";
     }
 })
+
+
+
+

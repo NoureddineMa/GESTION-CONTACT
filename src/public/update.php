@@ -69,7 +69,7 @@ $user_id = $_SESSION['user_session'];
     <form method="POST" class="rounded bg-white px-3 py-3 text-center w-50 position">
       <?php $userRow = $crud->getID($user_id); ?>
           
-            
+    
       <div class="form-group for-input">
         <input type="text" class="  unborder mb-2 form-control" name="Name" value="<?php  if(isset($Name)) echo $Name; ?> ">
       </div>

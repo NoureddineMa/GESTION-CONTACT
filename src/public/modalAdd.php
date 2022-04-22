@@ -28,18 +28,21 @@ if (isset($_POST['insert'])) {
          <form method="POST" enctype="multipart/form-data" action="" class="px-4 py-4  d-flex flex-column align-items-center">
             <fieldset> 
                  <div class="form-group">
-                   <input type="text" class="form-control unborder w-100"  placeholder="Veuillez entrez un Nom :" name="Name">
-                 </div>
+                   <input type="text" id="Fname" class="form-control unborder w-100 px-2"  placeholder="Veuillez entrez un Nom :" name="Name" onkeyup="ValidationName()">
+                   <div id="erreur-Fname"></div> 
+                  </div>
                  
                  <div class="form-group">
-                   <input type="Email" class="form-control unborder w-100"  placeholder="Veuillez entrez un mail :" name="Email">
+                   <input type="Email" id="email" class="form-control unborder w-100 px-2"  placeholder="Veuillez entrez un mail :" name="Email">
+                   <div id="erreur-email"></div>
+                  </div>
+                 <div class="form-group">
+                   <input type="text" id="phone" class="form-control unborder w-100 px-2"  placeholder="Veuillez entrez le numéro de telephone :" name="Phone">
+                   <div id="erreur-Phone"></div>
+
                  </div>
                  <div class="form-group">
-                   <label for="Phone"> </label>
-                   <input type="text" class="form-control unborder w-100"  placeholder="Veuillez entrez le numéro de telephone :" name="Phone">
-                 </div>
-                 <div class="form-group">
-                   <input type="text" class="form-control unborder w-100" id="adresse"  placeholder="Veuillez entrez l'adresse :" name="Adresse">
+                   <input type="text" id="adresse" class="form-control unborder w-100 px-2" id="adresse"  placeholder="Veuillez entrez l'adresse :" name="Adresse">
                    <div id="erreur-adresse"></div>
                  </div>
                    <!-- Modal footer -->
@@ -54,7 +57,7 @@ if (isset($_POST['insert'])) {
   </div>
 </div>
   <!-- link js  -->
-  <script type="text/javascript" src="./../../js/AddContactFormValid.js"></script>
+  <script type="text/javascript" src="../../assets/js/AddContactFormValid.js"></script>
   <!-- modal -->
 
   <!-- end section -->

@@ -54,11 +54,11 @@ if( isset($_POST['signin'])){
 <h1 class="text-black text-center mb-5">SIGN UP </h1>
 
 
-    <input class="w-100 mb-1 unborder " placeholder="Username" type="text" id="Username" name="Name">
+    <input class="w-100 mb-1 unborder px-2 " placeholder="Username" type="text" id="Username" name="Name">
     <div id="errUser" class="mb-3"></div>
-    <input class="w-100 mb-1 unborder" type="password" placeholder="password" id="Password" name="password">
+    <input class="w-100 mb-1 unborder px-2" type="password" placeholder="password" id="Password" name="password">
     <div id="errPass" class="mb-3"></div>
-    <input class="w-100 mb-1 unborder" type="password" placeholder="password verify" id="PasswordV">
+    <input class="w-100 mb-1 unborder px-2" type="password" placeholder="password verify" id="PasswordV">
     <div id="errPassV" class="mb-3"></div>
     <input class="w-100  bg-submit unborder fw-bold border-0 rounded py-2 " id="signin" type="submit" name="signin" value="Sign in">
 
