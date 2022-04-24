@@ -68,4 +68,8 @@
 .bg-update {
     background-color : #4E944F !important;
 }
-
+.bg-user  {
+  background : url('/src/img/user.png');
+  background-position: right center;
+  background-size: 24px;
+}

@@ -94,7 +94,7 @@ Submit.addEventListener("click",(e) =>{
 
 // function Phone : 
 
-function ValidatePhone(){
+function ValidatePhone(){   
     if(!(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/).test(phone.value)){
         Phone.setAttribute("style" , "color:red; border: 1px red solid ;")  ;
         Erreur_phone.setAttribute("style" , "color:red;");

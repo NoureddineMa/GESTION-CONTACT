@@ -45,7 +45,10 @@ $user = new USER($db_conn);
     <div class="parent d-flex flex-column bg-modal w-25 px-5 py-5 rounded bg-white">
     <h1 class="text-black text-center mb-3 ">LOG IN </h1>
 
+    
+
         <!-- Input Username  -->
+        
         <input class="w-100 unborder mt-2 mb-2 px-2" type="text" id="username" name="Name" placeholder=" Username">
         <div id="erreurName" class="mb-2"></div>
       <!-- Input Password -->
@@ -53,6 +56,7 @@ $user = new USER($db_conn);
         <div id="erreurPassword" class="mb-3"></div>
       <!-- Input type Submit for login  -->
         <input class="w-100  bg-submit text-white border-0 rounded py-2 " type="submit" value="LOGIN" id="login" name="login">
+        
     </form>
 
         <p class="mt-4 text-black text-center fs-6 sigin-clr">No account? <a class="h-one text-decoration-none fw-bold" href="signin.php"> Sign up</a> here.</p>
