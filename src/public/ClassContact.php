@@ -19,7 +19,7 @@ include "DbConnection.php";
         return $user;
      }
 
-
+     
 
      public function ADD($Name,$Email,$Phone,$Adresse, $id){
         try{

@@ -31,7 +31,7 @@ Submit.addEventListener("click",(e) =>{
 // function Name  (Regex): 
 
 function ValidationName(){
-    if(!(/^[a-zA-Z ]{3,10}$/).test(Fname.value)){
+    if(!(/^[a-zA-Z]{3,10}$/).test(Fname.value)){
         Fname.setAttribute("style" , "color:red; border: 1px red solid ;")  ;
         Erreur_Fname.setAttribute("style" , "color:red;");
         Erreur_Fname.innerText = "veuillez entrer un nom valid";
@@ -42,9 +42,6 @@ function ValidationName(){
 
     }
 }
-
-
-
 // email : 
 Submit.addEventListener("click",(e) =>{
     if(Email.value == ""){

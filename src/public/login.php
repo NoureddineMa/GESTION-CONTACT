@@ -16,6 +16,7 @@ $user = new USER($db_conn);
       }
       else{
         $error = "Please Verify ur Name or Password !!";
+
       }
     }
     
@@ -28,7 +29,7 @@ $user = new USER($db_conn);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- link fontawesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- link css -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
      <link rel="stylesheet" href="../../assets/style.css">
      <!-- link bootstrap  -->
      <!-- CSS only -->
@@ -48,10 +49,9 @@ $user = new USER($db_conn);
     
 
         <!-- Input Username  -->
-        
         <input class="w-100 unborder mt-2 mb-2 px-2" type="text" id="username" name="Name" placeholder=" Username">
         <div id="erreurName" class="mb-2"></div>
-      <!-- Input Password -->
+<!-- Input Password -->
         <input class="w-100 unborder px-2" placeholder="Password" type="password" id="password" name="password">
         <div id="erreurPassword" class="mb-3"></div>
       <!-- Input type Submit for login  -->
